@@ -53,6 +53,7 @@ export class GetData implements AuthenticateChaine {
                 .then((data) => {
                     if (data != null) {
                         this.data = data
+
                         if (this.Nextchaine != null) {
                             console.log('going to next chaine');
                             this.Nextchaine.processOperation()
@@ -68,6 +69,7 @@ export class GetData implements AuthenticateChaine {
                                 });
                         } else {
                             console.log('this is the end of the chaine');
+                            this.response.send(this.data)
                             observer.next(true);
                         }
                     } else {
