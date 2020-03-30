@@ -14,7 +14,7 @@ import { sequelize } from './Mysql/MysqlConnectivity';
 
 const RouterAuthenticate = require('./router/Authenticate').router;
 const RouterUserInfo = require('./router/UserInfo').router;
-const RouterGetData = require('./router/GetData').router;
+const RouterGetData = require('./router/GetDataRouter').router;
 
 const app = express();
 
