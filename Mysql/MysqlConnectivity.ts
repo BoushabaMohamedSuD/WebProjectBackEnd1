@@ -6,10 +6,10 @@ export { };
 import { User } from './User';
 import { UserInfo } from './UserInfo';
 export const sequelize = new Sequelize({
-    database: 'Iot',
+    database: 'BoushabaMohamedProject',
     // dialect: 'sqlite',
-    username: 'Iot',
-    password: 'Iot',
+    username: 'BoushabaMohamedProject',
+    password: 'BoushabaMohamed',
     //storage: ':memory:',
     dialect: "mysql",
     host: 'localhost',

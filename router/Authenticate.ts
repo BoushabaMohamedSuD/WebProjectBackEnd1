@@ -1,4 +1,4 @@
-import { Testa } from './../Test/TestCode/Test';
+
 import { SendEmailValidation } from './../Logics/Authenticate/Strategy/Strategys/SendEmailValidation';
 import { UserInfo } from './../Mysql/UserInfo';
 import { User } from './../Mysql/User';
@@ -106,42 +106,6 @@ router.get('/ValidationEmail/:token', (req, res) => {
         });
 
 })
-
-
-
-
-
-
-
-/*
-var multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function (req: any, file: any, cb: any) {
-        cb(null, './uploads/public/images');
-    },
-    filename: function (req: any, file: any, cb: any) {
-        // console.log(req.header('username'));
-        cb(null, req.header('Username') + ".png");
-    }
-});
-var upload = multer({ storage: storage });
-*/
-
-router.post('/test', (req, res) => {
-    console.log("(((test)))))");
-    /* console.log(req.headers);
-     const bearer = (req.header('authorization') as string).split(' ');
-     let token: string = bearer[1];
-     console.log(token);
- 
-     console.log("----------");
-     console.log(req.body.firstname);*/
-
-    new Testa().process();
-
-    res.send("ok");
-    //throw new Error('no Factory selected');
-});
 
 
 

@@ -1,5 +1,4 @@
-import { Notification } from './Notification';
-import { RasberySql } from './RasberySQL';
+
 import { Model, Column, Table, BelongsToMany, Scopes, CreatedAt, UpdatedAt, HasMany, ForeignKey, AllowNull, Unique, NotNull, Default, HasOne, BelongsTo } from "sequelize-typescript";
 import { UserInfo } from "./UserInfo";
 
@@ -59,15 +58,6 @@ export class User extends Model<User> {
 
     @HasOne(() => UserInfo, 'UserKey')
     UserInfoId?: UserInfo;
-
-
-    @ForeignKey(() => RasberySql)
-    RasberyId!: number;
-
-    @BelongsTo(() => RasberySql)
-    RasberyHolder?: RasberySql;
-
-
 
 
 
