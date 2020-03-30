@@ -1,3 +1,4 @@
+
 import { Data } from './Mysql/Data';
 
 export { };
@@ -13,6 +14,7 @@ import { sequelize } from './Mysql/MysqlConnectivity';
 
 const RouterAuthenticate = require('./router/Authenticate').router;
 const RouterUserInfo = require('./router/UserInfo').router;
+const RouterGetData = require('./router/GetData').router;
 
 const app = express();
 
@@ -27,19 +29,20 @@ app.use(bodyParser({ extended: false }));
 app.use('/images', express.static(__dirname + '/uploads/public/images'));
 app.use(RouterAuthenticate);
 app.use('/UserInfo', RouterUserInfo);
+app.use('/GetData', RouterGetData);
 
 
 
 
-sequelize.sync({ force: true })
+sequelize.sync(/*{ force: true }*/)
     .then(() => {
 
-        Data.create()
-            .then(() => {
-                const server = app.listen(4000);
-                console.log("server has been created");
-            })
-            .catch(() => console.log('cannot create data'))
+        /* Data.create()
+             .then(() => {
+                 const server = app.listen(4000);
+                 console.log("server has been created");
+             })
+             .catch(() => console.log('cannot create data'))*/
 
 
 

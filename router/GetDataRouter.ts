@@ -18,7 +18,7 @@ const router = express.Router();
 
 
 
-router.get('/GetData', (req, res) => {
+router.get('/', (req, res) => {
     console.log('get Data');
     new AuthenticateContent(new GetDataStrategy(req, res))
         .process()
