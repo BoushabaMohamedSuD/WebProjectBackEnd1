@@ -1,3 +1,4 @@
+import { Data } from './Data';
 import { Sequelize } from 'sequelize-typescript';
 
 // for connecting to databases in mysql workbunch
@@ -21,5 +22,5 @@ export const sequelize = new Sequelize({
         acquire: 30000,
         idle: 10000
     },
-    models: [User, UserInfo],
+    models: [User, UserInfo, Data],
 });
