@@ -52,6 +52,7 @@ export class GetData implements AuthenticateChaine {
             Data.findOne({ where: { id: 1 } })
                 .then((data) => {
                     if (data != null) {
+                        this.data = data
                         if (this.Nextchaine != null) {
                             console.log('going to next chaine');
                             this.Nextchaine.processOperation()
@@ -78,34 +79,6 @@ export class GetData implements AuthenticateChaine {
                     observer.error(false);
                     console.log('user could not be found');
                 })
-
-            //:::::: your code her ::::::::::w:://  
-            User.findOne({ where: { username: this.request.body.username } })
-                .then((user) => {
-                    if (user != null) {
-                        if (user.password == this.request.body.password) {
-                            this.data.username = user.username;
-                            this.data.email = user.email;
-                            this.data.state = user.state;
-                            this.data.authority = user.authority;
-                            this.data.isReady = user.isReady;
-
-
-
-                        } else {
-                            console.log('the password is uncorect');
-                            observer.error(false);
-                        }
-                    } else {
-                        console.log('user is null');
-                        observer.error(false);
-                    }
-
-                })
-                .catch((err) => {
-                    observer.error(false);
-                    console.log('user could not be found');
-                });
 
 
 
