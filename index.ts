@@ -1,3 +1,4 @@
+import { Data } from './Mysql/Data';
 
 export { };
 
@@ -33,8 +34,13 @@ app.use('/UserInfo', RouterUserInfo);
 sequelize.sync({ force: true })
     .then(() => {
 
-        const server = app.listen(4000);
-        console.log("server has been created");
+        Data.create()
+            .then(() => {
+                const server = app.listen(4000);
+                console.log("server has been created");
+            })
+            .catch(() => console.log('cannot create data'))
+
 
 
     })
