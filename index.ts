@@ -39,11 +39,12 @@ sequelize.sync(/*{ force: true }*/)
 
         /* Data.create()
              .then(() => {
-                 const server = app.listen(4000);
+                
                  console.log("server has been created");
              })
              .catch(() => console.log('cannot create data'))*/
 
+        const server = app.listen(4000);
 
 
     })
