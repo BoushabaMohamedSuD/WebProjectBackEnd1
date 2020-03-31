@@ -37,9 +37,38 @@ app.use('/GetData', RouterGetData);
 sequelize.sync(/*{ force: true }*/)
     .then(() => {
 
-        /* Data.create()
+        /* Data.bulkCreate([
+             {
+                 Nom: 'DATA',
+                 Description: 'Ingénieur des Sciences de Données'
+             },
+             {
+                 Nom: 'ASEDS',
+                 Description: 'Advanced Software Engineering for Digital Services'
+             },
+             {
+                 Nom: 'ICCN',
+                 Description: 'Ingénieur Cybersécurité Et Confiance Numérique'
+             },
+             {
+                 Nom: 'SESNum',
+                 Description: 'Systèmes Embraqués et Services Numériques'
+             },
+             {
+                 Nom: 'SmartICT',
+                 Description: 'Ingénierie Smart Information & Communication Technology Engineering'
+             },
+             {
+                 Nom: 'SUD',
+                 Description: 'Ingénierie des Systèmes Ubiquitaires et Distribués – Cloud et IoT'
+             },
+             {
+                 Nom: 'AMOA',
+                 Description: 'Ingénieur Innovation et AMOA'
+             },
+         ])
              .then(() => {
-                
+ 
                  console.log("server has been created");
              })
              .catch(() => console.log('cannot create data'))*/

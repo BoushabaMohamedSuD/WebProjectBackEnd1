@@ -49,7 +49,7 @@ export class GetData implements AuthenticateChaine {
         return new Observable((observer: Observer<boolean>) => {
 
 
-            Data.findOne({ where: { id: 1 } })
+            Data.findAll()
                 .then((data) => {
                     if (data != null) {
                         this.data = data
